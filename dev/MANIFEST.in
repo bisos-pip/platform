@@ -1,0 +1,14 @@
+# No Deps
+
+include lh-agpl3-LICENSE.txt
+
+
+include TITLE.txt
+include README.rst
+
+# Include the data files
+#recursive-include bisos/platform-base *
+recursive-include bisos/platform-config *
+
+# The line below is needed when data_files are specified in setup.py
+#recursive-include data *
