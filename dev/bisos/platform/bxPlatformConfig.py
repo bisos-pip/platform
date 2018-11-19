@@ -728,7 +728,7 @@ class pkgInfoParsSet(icm.Cmnd):
             processEachArg(each)
 
         if bisosUserName:
-            icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.FILE_ParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     "bisosUserName",
@@ -737,7 +737,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
 
         if bisosGroupName:
-            icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.FILE_ParamWriteToPath(
                 parNameFullPath=os.path.join(configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                              "bisosGroupName",
                 ),
@@ -745,7 +745,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
 
         if rootDir_bisos:
-            icm.FILE_ParamWriteToPath(                
+            parNameFullPath = icm.FILE_ParamWriteToPath(                
                 parNameFullPath=os.path.join(configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                              "rootDir_bisos",
                 ),
@@ -753,7 +753,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
 
         if rootDir_bxo:
-            icm.FILE_ParamWriteToPath(                
+            parNameFullPath = icm.FILE_ParamWriteToPath(                
                 parNameFullPath=os.path.join(configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                              "rootDir_bxo",
                 ),
@@ -761,7 +761,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
             
         if rootDir_deRun:
-            icm.FILE_ParamWriteToPath(                
+            parNameFullPath = icm.FILE_ParamWriteToPath(                
                 parNameFullPath=os.path.join(configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                              "rootDir_deRun",
                 ),
@@ -769,7 +769,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
             
         if rootDir_foreignBxo:
-            icm.FILE_ParamWriteToPath(                
+            parNameFullPath = icm.FILE_ParamWriteToPath(                
                 parNameFullPath=os.path.join(configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                              "rootDir_foreignBxo",
                 ),
@@ -778,7 +778,9 @@ class pkgInfoParsSet(icm.Cmnd):
             
             
         if interactive:
-            icm.ANN_here("pkgInfoParsSet")
+            parValue = icm.FILE_ParamValueReadFromPath(parNameFullPath)
+            icm.ANN_here("pkgInfoParsSet: {parValue} at {parNameFullPath}".
+                         format(parValue=parValue, parNameFullPath=parNameFullPath))
 
         return cmndOutcome.set(
             opError=icm.OpError.Success,
