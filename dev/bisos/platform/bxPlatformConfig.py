@@ -107,9 +107,9 @@ class bxPlatformConfig_libOverview(icm.Cmnd):
 
     @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
     def cmnd(self,
-        interactive=False,        # Can also be called non-interactively
-        argsList=[],         # or Args-Input
-    ):
+             interactive=False,        # Can also be called non-interactively
+             argsList=[],         # or Args-Input
+             ):
         cmndOutcome = self.getOpOutcome()
         if interactive:
             if not self.cmndLineValidate(outcome=cmndOutcome):
@@ -127,7 +127,7 @@ class bxPlatformConfig_libOverview(icm.Cmnd):
             return cmndOutcome
 ####+END:
 
-        moduleDescription="""
+        moduleDescription = """
 *       [[elisp:(org-show-subtree)][|=]]  [[elisp:(org-cycle)][| *Description:* | ]]
 **  [[elisp:(org-cycle)][| ]]  [Xref]          :: *[Related/Xrefs:]*  <<Xref-Here->>  -- External Documents  [[elisp:(org-cycle)][| ]]
 
@@ -338,10 +338,10 @@ def rootDir_foreignBxo_fpObtain(
 ####+END:
     if not configBaseDir:
         configBaseDir = configBaseDir_obtain()
-        
+
     return(
         icm.FILE_ParamValueReadFrom(
-            parRoot= os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
+            parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="rootDir_foreignBxo")
     )
 

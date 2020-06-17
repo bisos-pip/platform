@@ -5,11 +5,11 @@ import setuptools
 
 def readme():
     with open('TITLE.txt') as f:
-         return f.readline().rstrip('\n')
+        return f.readline().rstrip('\n')
 
 def longDescription():
     with open('README.rst') as f:
-         return f.read()
+        return f.read()
 
 
 #from setuphelpers import get_version, require_python

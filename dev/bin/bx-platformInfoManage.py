@@ -371,12 +371,13 @@ def G_main():
 ####+END:
 
 g_examples = examples  # or None 
-g_mainEntry = None # of G_main
+g_mainEntry = None  # of G_main
 
 ####+BEGIN: bx:dblock:global:file-insert :file "/libre/ByStar/InitialTemplates/update/sw/icm/py/icm2.G_main.py"
 """
 *  [[elisp:(beginning-of-buffer)][Top]] # /Dblk-Begin/ # [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(delete-other-windows)][(1)]]    *= =Framework::= ICM main() =*
 """
+
 
 def classedCmndsDict():
     """
@@ -413,6 +414,7 @@ icmInfo['credits'] = __credits__
 
 G = icm.IcmGlobalContext()
 G.icmInfo = icmInfo
+
 
 def g_icmMain():
     """This ICM's specific information is passed to G_mainWithClass"""
