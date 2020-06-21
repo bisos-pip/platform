@@ -18,11 +18,12 @@ def longDescription():
 
 
 # __version__ = get_version('unisos/icm/__init__.py')
-__version__ = '0.8'
+__version__ = '0.9'
 
 
 requires = [
     'unisos.icm',
+    'bisos.common',
 ]
 
 # print('Setting up under python version %s' % sys.version)

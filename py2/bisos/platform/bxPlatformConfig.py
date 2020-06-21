@@ -1018,10 +1018,10 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
             if not bisosGroupName:
                 bisosGroupName = bisosPolicy.bisosGroupName()
 
-            if not bisosUserName:
+            if not bystarUserName:
                 bystarUserName = bisosPolicy.bystarAccountName()
                 
-            if not bisosGroupName:
+            if not bystarGroupName:
                 bystarGroupName = bisosPolicy.bystarGroupName()
                 
             if not rootDir_bisos:
