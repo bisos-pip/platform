@@ -1,31 +1,32 @@
 #!/usr/bin/env python
 
 import setuptools
-#import sys
+
 
 def readme():
     with open('TITLE.txt') as f:
         return f.readline().rstrip('\n')
+
 
 def longDescription():
     with open('README.rst') as f:
         return f.read()
 
 
-#from setuphelpers import get_version, require_python
-#from setuptools import setup
+# from setuphelpers import get_version, require_python
+# from setuptools import setup
 
 
-#__version__ = get_version('unisos/icm/__init__.py')
-__version__ = '0.4'
+# __version__ = get_version('unisos/icm/__init__.py')
+__version__ = '0.8'
 
 
 requires = [
     'unisos.icm',
 ]
 
-#print('Setting up under python version %s' % sys.version)
-#print('Requirements: %s' % ','.join(requires))
+# print('Setting up under python version %s' % sys.version)
+# print('Requirements: %s' % ','.join(requires))
 
 scripts = [
     "bin/bx-platformInfoManage.py",
@@ -40,11 +41,11 @@ setuptools.setup(
     namespace_packages=['bisos'],
     packages=setuptools.find_packages(),
     scripts=scripts,
-    #data_files=data_files,
+    # data_files=data_files,
     # data_files=[
     #     ('pkgInfo', ["unisos/pkgInfo/fp/icmsPkgName/value"]),
     # ],
-    #package_dir={'unisos.marme': 'unisos'},
+    # package_dir={'unisos.marme': 'unisos'},
     # package_data={
     #     'unisos.marme': ['pkgInfo/fp/icmsPkgName/value'],
     # },
@@ -73,4 +74,3 @@ setuptools.setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         ]
     )
-

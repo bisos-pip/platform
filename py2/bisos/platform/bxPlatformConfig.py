@@ -24,7 +24,7 @@ __libName__ = "bxPlatformConfig"
 ####+END:
 
 ####+BEGIN: bx:global:timestamp:version-py :style "date"
-__version__ = "201805140708"
+__version__ = "202006170301"
 ####+END:
 
 ####+BEGIN: bx:global:icm:status-py :status "Production"
@@ -253,7 +253,7 @@ def bisosUserName_fpObtain(
         
     return(
         icm.FILE_ParamValueReadFrom(
-            parRoot= os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
+            parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="bisosUserName")
     )
 
@@ -271,8 +271,61 @@ def bisosGroupName_fpObtain(
 
     return(
         icm.FILE_ParamValueReadFrom(
-            parRoot= os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
+            parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="bisosGroupName")
+    )
+
+####+BEGIN: bx:icm:python:func :funcName "bystarUserName_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+"""
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  Func-anyOrNone :: /bystarUserName_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
+"""
+def bystarUserName_fpObtain(
+    configBaseDir,
+):
+####+END:
+    if not configBaseDir:
+        configBaseDir = configBaseDir_obtain()
+        
+    return(
+        icm.FILE_ParamValueReadFrom(
+            parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
+            parName="bystarsUserName")
+    )
+
+    
+####+BEGIN: bx:icm:python:func :funcName "bystarGroupName_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+"""
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  Func-anyOrNone :: /bystarGroupName_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
+"""
+def bystarGroupName_fpObtain(
+    configBaseDir,
+):
+####+END:
+    if not configBaseDir:
+        configBaseDir = configBaseDir_obtain()
+
+    return(
+        icm.FILE_ParamValueReadFrom(
+            parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
+            parName="bystarGroupName")
+    )
+
+
+####+BEGIN: bx:icm:python:func :funcName "rootDir_provisioners_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+"""
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  Func-anyOrNone :: /rootDir_provisioners_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
+"""
+def rootDir_provisioners_fpObtain(
+    configBaseDir,
+):
+####+END:
+    if not configBaseDir:
+        configBaseDir = configBaseDir_obtain()
+
+    return(
+        icm.FILE_ParamValueReadFrom(
+            parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
+            parName="rootDir_provisioners")
     )
 
 ####+BEGIN: bx:icm:python:func :funcName "rootDir_bisos_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
@@ -436,6 +489,39 @@ def commonParamsSpecify(
         argparseShortOpt=None,
         argparseLongOpt='--bisosGroupName',
     )
+
+    icmParams.parDictAdd(
+        parName='bystarUserName',
+        parDescription="BYSTAR Default UserName",
+        parDataType=None,
+        parDefault=None,
+        parChoices=["any"],
+        parScope=icm.ICM_ParamScope.TargetParam,
+        argparseShortOpt=None,
+        argparseLongOpt='--bystarUserName',
+    )
+    
+    icmParams.parDictAdd(
+        parName='bystarGroupName',
+        parDescription="BYSTAR Default GroupName",
+        parDataType=None,
+        parDefault=None,
+        parChoices=["any"],
+        parScope=icm.ICM_ParamScope.TargetParam,
+        argparseShortOpt=None,
+        argparseLongOpt='--bystarGroupName',
+    )
+    
+    icmParams.parDictAdd(
+        parName='rootDir_provisioners',
+        parDescription="Root Dir For bisos (defaults to /opt/bisosProvisioner)",
+        parDataType=None,
+        parDefault=None,
+        parChoices=["any"],
+        parScope=icm.ICM_ParamScope.TargetParam,
+        argparseShortOpt=None,
+        argparseLongOpt='--rootDir_provisioners',
+    )
     
     icmParams.parDictAdd(
         parName='rootDir_bisos',
@@ -525,23 +611,35 @@ def examples_pkgInfoParsFull(
     
     cmndName = "pkgInfoParsDefaultsSet" ; cmndArgs = "foreignBxoPolicy /tmp" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; 
-    cps['bisosUserName'] = "lsipusr" ; cps['bisosGroupName'] = "employee"
+    cps['bystarUserName'] = "bystar" ; cps['bystarGroupName'] = "bisos"
     cps['rootDir_foreignBxo'] = "${HOME}/foreignBxo"
     icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsDefaultsSet" ; cmndArgs = "externalPolicy" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; 
-    cps['bisosUserName'] = "lsipusr" ; cps['bisosGroupName'] = "employee" 
+    cps['bisosUserName'] = "bisos" ; cps['bisosGroupName'] = "bisos" 
     icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
 
     icm.cmndExampleMenuChapter(' =FP Values=  *PkgInfo ParsSet -- Set Parameters Explicitly*')
      
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
-    cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['bisosUserName'] = "lsipusr"
+    cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['bisosUserName'] = "bisos"
     icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
-    cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['bisosGroupName'] = "employee" 
+    cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['bisosGroupName'] = "bisos"
+    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    
+    cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
+    cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['bystarUserName'] = "bystar"
+    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+
+    cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
+    cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['bystarGroupName'] = "bisos"
+    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+
+    cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
+    cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['rootDir_provisioners'] = "/opt/bisosProvisioner"
     icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
@@ -648,13 +746,13 @@ class pkgInfoParsGet(icm.Cmnd):
 """
 
 
-####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "pkgInfoParsSet" :comment "" :parsMand "" :parsOpt "configBaseDir bisosUserName bisosGroupName rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo" :argsMin "0" :argsMax "1000" :asFunc "" :interactiveP ""
+####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "pkgInfoParsSet" :comment "" :parsMand "" :parsOpt "configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo" :argsMin "0" :argsMax "1000" :asFunc "" :interactiveP ""
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || ICM-Cmnd       :: /pkgInfoParsSet/ parsMand= parsOpt=configBaseDir bisosUserName bisosGroupName rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo argsMin=0 argsMax=1000 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  ICM-Cmnd       :: /pkgInfoParsSet/ parsMand= parsOpt=configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo argsMin=0 argsMax=1000 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
 """
 class pkgInfoParsSet(icm.Cmnd):
     cmndParamsMandatory = [ ]
-    cmndParamsOptional = [ 'configBaseDir', 'bisosUserName', 'bisosGroupName', 'rootDir_bisos', 'rootDir_bxo', 'rootDir_deRun', 'rootDir_foreignBxo', ]
+    cmndParamsOptional = [ 'configBaseDir', 'bisosUserName', 'bisosGroupName', 'bystarUserName', 'bystarGroupName', 'rootDir_provisioners', 'rootDir_bisos', 'rootDir_bxo', 'rootDir_deRun', 'rootDir_foreignBxo', ]
     cmndArgsLen = {'Min': 0, 'Max': 1000,}
 
     @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
@@ -663,6 +761,9 @@ class pkgInfoParsSet(icm.Cmnd):
         configBaseDir=None,         # or Cmnd-Input
         bisosUserName=None,         # or Cmnd-Input
         bisosGroupName=None,         # or Cmnd-Input
+        bystarUserName=None,         # or Cmnd-Input
+        bystarGroupName=None,         # or Cmnd-Input
+        rootDir_provisioners=None,         # or Cmnd-Input
         rootDir_bisos=None,         # or Cmnd-Input
         rootDir_bxo=None,         # or Cmnd-Input
         rootDir_deRun=None,         # or Cmnd-Input
@@ -677,12 +778,15 @@ class pkgInfoParsSet(icm.Cmnd):
         else:
             effectiveArgsList = argsList
 
-        callParamsDict = {'configBaseDir': configBaseDir, 'bisosUserName': bisosUserName, 'bisosGroupName': bisosGroupName, 'rootDir_bisos': rootDir_bisos, 'rootDir_bxo': rootDir_bxo, 'rootDir_deRun': rootDir_deRun, 'rootDir_foreignBxo': rootDir_foreignBxo, }
+        callParamsDict = {'configBaseDir': configBaseDir, 'bisosUserName': bisosUserName, 'bisosGroupName': bisosGroupName, 'bystarUserName': bystarUserName, 'bystarGroupName': bystarGroupName, 'rootDir_provisioners': rootDir_provisioners, 'rootDir_bisos': rootDir_bisos, 'rootDir_bxo': rootDir_bxo, 'rootDir_deRun': rootDir_deRun, 'rootDir_foreignBxo': rootDir_foreignBxo, }
         if not icm.cmndCallParamsValidate(callParamsDict, interactive, outcome=cmndOutcome):
             return cmndOutcome
         configBaseDir = callParamsDict['configBaseDir']
         bisosUserName = callParamsDict['bisosUserName']
         bisosGroupName = callParamsDict['bisosGroupName']
+        bystarUserName = callParamsDict['bystarUserName']
+        bystarGroupName = callParamsDict['bystarGroupName']
+        rootDir_provisioners = callParamsDict['rootDir_provisioners']
         rootDir_bisos = callParamsDict['rootDir_bisos']
         rootDir_bxo = callParamsDict['rootDir_bxo']
         rootDir_deRun = callParamsDict['rootDir_deRun']
@@ -714,7 +818,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
 
         def processEachArg(argStr):
-            varNameValue=argStr.split('=')
+            varNameValue = argStr.split('=')
             icm.FILE_ParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
@@ -738,45 +842,75 @@ class pkgInfoParsSet(icm.Cmnd):
 
         if bisosGroupName:
             parNameFullPath = icm.FILE_ParamWriteToPath(
-                parNameFullPath=os.path.join(configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
-                             "bisosGroupName",
+                parNameFullPath=os.path.join(
+                    configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
+                    "bisosGroupName",
                 ),
                 parValue=bisosGroupName,
             )
+        if bystarUserName:
+            parNameFullPath = icm.FILE_ParamWriteToPath(
+                parNameFullPath=os.path.join(
+                    configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
+                    "bystarUserName",
+                ),
+                parValue=bystarUserName,
+            )
+
+        if bystarGroupName:
+            parNameFullPath = icm.FILE_ParamWriteToPath(
+                parNameFullPath=os.path.join(
+                    configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
+                    "bystarGroupName",
+                ),
+                parValue=bystarGroupName,
+            )
+
+        if rootDir_provisioners:
+            parNameFullPath = icm.FILE_ParamWriteToPath(
+                parNameFullPath=os.path.join(
+                    configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
+                    "rootDir_provisioners",
+                ),
+                parValue=rootDir_provisioners,
+            )
 
         if rootDir_bisos:
-            parNameFullPath = icm.FILE_ParamWriteToPath(                
-                parNameFullPath=os.path.join(configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
-                             "rootDir_bisos",
+            parNameFullPath = icm.FILE_ParamWriteToPath(
+                parNameFullPath=os.path.join(
+                    configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
+                    "rootDir_bisos",
                 ),
                 parValue=rootDir_bisos,
             )
 
         if rootDir_bxo:
-            parNameFullPath = icm.FILE_ParamWriteToPath(                
-                parNameFullPath=os.path.join(configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
-                             "rootDir_bxo",
+            parNameFullPath = icm.FILE_ParamWriteToPath(
+                parNameFullPath=os.path.join(
+                    configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
+                    "rootDir_bxo",
                 ),
                 parValue=rootDir_bxo,
             )
-            
+           
         if rootDir_deRun:
-            parNameFullPath = icm.FILE_ParamWriteToPath(                
-                parNameFullPath=os.path.join(configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
-                             "rootDir_deRun",
+            parNameFullPath = icm.FILE_ParamWriteToPath(
+                parNameFullPath=os.path.join(
+                    configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
+                    "rootDir_deRun",
                 ),
                 parValue=rootDir_deRun,
             )
-            
+           
         if rootDir_foreignBxo:
-            parNameFullPath = icm.FILE_ParamWriteToPath(                
-                parNameFullPath=os.path.join(configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
-                             "rootDir_foreignBxo",
+            parNameFullPath = icm.FILE_ParamWriteToPath(
+                parNameFullPath=os.path.join(
+                    configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
+                    "rootDir_foreignBxo",
                 ),
                 parValue=rootDir_foreignBxo,
             )
-            
-            
+
         if interactive:
             parValue = icm.FILE_ParamValueReadFromPath(parNameFullPath)
             icm.ANN_here("pkgInfoParsSet: {parValue} at {parNameFullPath}".
@@ -821,13 +955,13 @@ class pkgInfoParsSet(icm.Cmnd):
 ***** TODO [[elisp:(org-cycle)][| *CmndDesc:* | ]]  Place holder for this commands doc string.
 """
 
-####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "pkgInfoParsDefaultsSet" :comment "" :parsMand "" :parsOpt "configBaseDir bisosUserName bisosGroupName rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo" :argsMin "0" :argsMax "2" :asFunc "" :interactiveP ""
+####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "pkgInfoParsDefaultsSet" :comment "" :parsMand "" :parsOpt "configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo" :argsMin "0" :argsMax "2" :asFunc "" :interactiveP ""
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || ICM-Cmnd       :: /pkgInfoParsDefaultsSet/ parsMand= parsOpt=configBaseDir bisosUserName bisosGroupName rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo argsMin=0 argsMax=2 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  ICM-Cmnd       :: /pkgInfoParsDefaultsSet/ parsMand= parsOpt=configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo argsMin=0 argsMax=2 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
 """
 class pkgInfoParsDefaultsSet(icm.Cmnd):
     cmndParamsMandatory = [ ]
-    cmndParamsOptional = [ 'configBaseDir', 'bisosUserName', 'bisosGroupName', 'rootDir_bisos', 'rootDir_bxo', 'rootDir_deRun', 'rootDir_foreignBxo', ]
+    cmndParamsOptional = [ 'configBaseDir', 'bisosUserName', 'bisosGroupName', 'bystarUserName', 'bystarGroupName', 'rootDir_provisioners', 'rootDir_bisos', 'rootDir_bxo', 'rootDir_deRun', 'rootDir_foreignBxo', ]
     cmndArgsLen = {'Min': 0, 'Max': 2,}
 
     @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
@@ -836,6 +970,9 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
         configBaseDir=None,         # or Cmnd-Input
         bisosUserName=None,         # or Cmnd-Input
         bisosGroupName=None,         # or Cmnd-Input
+        bystarUserName=None,         # or Cmnd-Input
+        bystarGroupName=None,         # or Cmnd-Input
+        rootDir_provisioners=None,         # or Cmnd-Input
         rootDir_bisos=None,         # or Cmnd-Input
         rootDir_bxo=None,         # or Cmnd-Input
         rootDir_deRun=None,         # or Cmnd-Input
@@ -850,12 +987,15 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
         else:
             effectiveArgsList = argsList
 
-        callParamsDict = {'configBaseDir': configBaseDir, 'bisosUserName': bisosUserName, 'bisosGroupName': bisosGroupName, 'rootDir_bisos': rootDir_bisos, 'rootDir_bxo': rootDir_bxo, 'rootDir_deRun': rootDir_deRun, 'rootDir_foreignBxo': rootDir_foreignBxo, }
+        callParamsDict = {'configBaseDir': configBaseDir, 'bisosUserName': bisosUserName, 'bisosGroupName': bisosGroupName, 'bystarUserName': bystarUserName, 'bystarGroupName': bystarGroupName, 'rootDir_provisioners': rootDir_provisioners, 'rootDir_bisos': rootDir_bisos, 'rootDir_bxo': rootDir_bxo, 'rootDir_deRun': rootDir_deRun, 'rootDir_foreignBxo': rootDir_foreignBxo, }
         if not icm.cmndCallParamsValidate(callParamsDict, interactive, outcome=cmndOutcome):
             return cmndOutcome
         configBaseDir = callParamsDict['configBaseDir']
         bisosUserName = callParamsDict['bisosUserName']
         bisosGroupName = callParamsDict['bisosGroupName']
+        bystarUserName = callParamsDict['bystarUserName']
+        bystarGroupName = callParamsDict['bystarGroupName']
+        rootDir_provisioners = callParamsDict['rootDir_provisioners']
         rootDir_bisos = callParamsDict['rootDir_bisos']
         rootDir_bxo = callParamsDict['rootDir_bxo']
         rootDir_deRun = callParamsDict['rootDir_deRun']
@@ -878,6 +1018,12 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
             if not bisosGroupName:
                 bisosGroupName = bisosPolicy.bisosGroupName()
 
+            if not bisosUserName:
+                bystarUserName = bisosPolicy.bystarAccountName()
+                
+            if not bisosGroupName:
+                bystarGroupName = bisosPolicy.bystarGroupName()
+                
             if not rootDir_bisos:
                 rootDir_bisos = os.path.join(rootPrefix, bisosPolicy.rootDir_bisos())
 
@@ -887,16 +1033,24 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
             if not rootDir_deRun:
                 rootDir_deRun = os.path.join(rootPrefix, bisosPolicy.rootDir_deRun())
 
-                
         elif basesPolicy == "foreignBxoPolicy":
             if not bisosUserName:
-                return icm.EH_problem_usageError("Missing bisosUserName")                
+                return icm.EH_problem_usageError("Missing bisosUserName")
 
             if not bisosGroupName:
                 return icm.EH_problem_usageError("Missing bisosGroupName")
 
+            if not bystarUserName:
+                return icm.EH_problem_usageError("Missing bystarUserName")
+
+            if not bystarGroupName:
+                return icm.EH_problem_usageError("Missing bystarGroupName")
+
             if not rootDir_foreignBxo:
                 return icm.EH_problem_usageError("Missing rootDir_foreignBxo")
+
+            if not rootDir_provisioners:
+                rootDir_provisioners = os.path.join(rootPrefix, bisosPolicy.rootDir_provisioners())
 
             if not rootDir_bisos:
                 rootDir_bisos = os.path.join(rootPrefix, bisosPolicy.rootDir_bisos())
@@ -915,9 +1069,18 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
             if not bisosGroupName:
                 return icm.EH_problem_usageError("Missing bisosGroupName")
 
+            if not bystarUserName:
+                return icm.EH_problem_usageError("Missing bystarUserName")                
+
+            if not bystarGroupName:
+                return icm.EH_problem_usageError("Missing bystarGroupName")
+            
             if not rootDir_foreignBxo:
                 return icm.EH_problem_usageError("Missing rootDir_foreignBxo")
 
+            if not rootDir_provisioners:
+                return icm.EH_problem_usageError("Missing rootDir_provisioners")
+            
             if not rootDir_bisos:
                 return icm.EH_problem_usageError("Missing rootDir_bisos")
 
@@ -936,7 +1099,10 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
             configBaseDir=configBaseDir,
             bisosUserName=bisosUserName,
             bisosGroupName=bisosGroupName,
+            bystarUserName=bystarUserName,
+            bystarGroupName=bystarGroupName,
             rootDir_foreignBxo=rootDir_foreignBxo,
+            rootDir_provisioners=rootDir_provisioners,
             rootDir_bisos=rootDir_bisos,
             rootDir_bxo=rootDir_bxo,
             rootDir_deRun=rootDir_deRun,
