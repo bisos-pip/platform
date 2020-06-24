@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/python2
 # -*- coding: utf-8 -*-
 """\
 * *[Summary]* :: An =ICM=: Install dependencies of ICMs-Pkgs.
@@ -78,7 +78,7 @@ G = icm.IcmGlobalContext()
 G.icmLibsAppend = __file__
 G.icmCmndsLibsAppend = __file__
 
-from blee.icmPlayer import bleep
+# from blee.icmPlayer import bleep
 
 ####+END:
 
@@ -86,7 +86,7 @@ from bisos.platform import bxPlatformConfig
 from bisos.platform import bxPlatformThis
 
 g_importedCmnds = {        # Enumerate modules from which CMNDs become invokable
-    'bleep': bleep.__file__,    
+    # 'bleep': bleep.__file__,    
     'bxPlatformConfig': bxPlatformConfig.__file__,
 }
 
@@ -259,7 +259,7 @@ def g_argsExtraSpecify(
         argparseLongOpt='--version',
     )
 
-    bleep.commonParamsSpecify(icmParams)    
+    # bleep.commonParamsSpecify(icmParams)    
    
     bxPlatformConfig.commonParamsSpecify(icmParams)
        
@@ -304,7 +304,7 @@ class examples(icm.Cmnd):
         
         icm.G_commonBriefExamples()    
 
-        bleep.examples_icmBasic()
+        # bleep.examples_icmBasic()
 
         
 ####+BEGIN: bx:icm:python:cmnd:subSection :title "Dev And Testing"
