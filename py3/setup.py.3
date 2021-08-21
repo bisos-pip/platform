@@ -23,7 +23,7 @@ __version__ = '0.11'
 
 requires = [
     'unisos.icm',
-    'bisos2.common',
+    'bisos.common',
 ]
 
 # print('Setting up under python version %s' % sys.version)
@@ -37,9 +37,9 @@ data_files = [
 ]
 
 setuptools.setup(
-    name='bisos2.platform',
+    name='bisos.platform',
     version=__version__,
-    namespace_packages=['bisos2'],
+    namespace_packages=['bisos'],
     packages=setuptools.find_packages(),
     scripts=scripts,
     # data_files=data_files,

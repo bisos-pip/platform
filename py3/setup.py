@@ -18,12 +18,12 @@ def longDescription():
 
 
 # __version__ = get_version('unisos/icm/__init__.py')
-__version__ = '0.11'
+__version__ = '0.13'
 
 
 requires = [
     'unisos.icm',
-    'bisos2.common',
+    'bisos.common',
 ]
 
 # print('Setting up under python version %s' % sys.version)
@@ -37,9 +37,9 @@ data_files = [
 ]
 
 setuptools.setup(
-    name='bisos2.platform',
+    name='bisos.platform',
     version=__version__,
-    namespace_packages=['bisos2'],
+    namespace_packages=['bisos'],
     packages=setuptools.find_packages(),
     scripts=scripts,
     # data_files=data_files,

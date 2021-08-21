@@ -1,0 +1,27 @@
+RefactoringTool: Skipping optional fixer: buffer
+RefactoringTool: Skipping optional fixer: idioms
+RefactoringTool: Skipping optional fixer: set_literal
+RefactoringTool: Skipping optional fixer: ws_comma
+RefactoringTool: Refactored ./platform/py3/bin/bx-platformInfoManage.py
+RefactoringTool: Files that were modified:
+RefactoringTool: ./platform/py3/bin/bx-platformInfoManage.py
+--- ./platform/py3/bin/bx-platformInfoManage.py	(original)
++++ ./platform/py3/bin/bx-platformInfoManage.py	(refactored)
+@@ -158,7 +158,7 @@
+         if actions[0] == "all":
+             actions = ['moduleDescription', 'moduleUsage', 'moduleStatus']
+         for each in actions:
+-            print each
++            print(each)
+             if interactive:
+                 #print( str( __doc__ ) )  # This is the Summary: from the top doc-string
+                 #version(interactive=True)
+@@ -319,7 +319,7 @@
+ 
+         configBaseDir = bxPlatformThis.pkgBase_configDir()
+ 
+-        print configBaseDir
++        print(configBaseDir)
+ 
+         bxPlatformConfig.examples_pkgInfoParsFull(
+             configBaseDir=configBaseDir,
