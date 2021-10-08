@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/bin/env python
 # -*- coding: utf-8 -*-
 """\
 * *[Summary]* :: An =ICM=: Install dependencies of ICMs-Pkgs.
