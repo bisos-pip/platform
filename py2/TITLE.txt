@@ -1,3 +1,0 @@
-bisos.platform: Platform Information Configuration Parameters For BISOS and BISOS Pkgs.
-
-
