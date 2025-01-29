@@ -90,9 +90,11 @@ import subprocess
 from pathlib import Path
 from bisos.bpo import bpo
 from bisos.platform import platformBases
+from bisos.platform import platformBpo
 from bisos.basics import pathPlus
 
 from pathlib import Path
+
 
 ####+BEGIN: b:py3:cs:orgItem/section :title "CSU-Lib Examples" :comment "-- Providing examples_csu"
 """ #+begin_org
@@ -130,11 +132,12 @@ def examples_csu(
     if sectionTitle == 'default':
         cs.examples.menuChapter('*Platform Bases -- Update, Obtain, List*')
 
-    this_bpoId = "pmp_HSS-1013"
+
+    this_bpoId = platformBpo.platformBpoId()
 
     cs.examples.menuSection(f'=Platform /bisos/platform -- /bisos/var/platform/bpoId -- /bisos/var/platform/bpo=')
 
-    cmnd('platformBase', pars=od([('bpoId', this_bpoId),]), args="update")
+    cmnd('platformBase', pars=od([('bpoId', this_bpoId),]), args="update", comment=f"# Using platformBpo.platformBpoId()")
     cmnd('platformBase', args="obtain")
 
     cs.examples.menuSection(f'=Platform /bisos/site -- /bisos/var/sites/selected=')
@@ -193,10 +196,10 @@ class platformBase(cs.Cmnd):
 
             bisosVarPlatformBpo = bisosVarPlatform.joinpath("bpo")
 
-            pathPlus.symlink_update(bisosVarPlatformBpo, bpoBasePath)
+            pathPlus.symlink_update(bpoBasePath, bisosVarPlatformBpo)
             # bisosVarPlatformBpo.symlink_to(bpoBasePath)
 
-            pathPlus.symlink_update("/bisos/platform", bisosVarPlatformBpo)
+            pathPlus.symlink_update( bisosVarPlatformBpo, "/bisos/platform",)
 
             return cmndOutcome
 
@@ -268,7 +271,7 @@ class siteBase(cs.Cmnd):
             bisosVarPlatform = Path("/bisos/var/sites")
             bisosVarPlatform.mkdir(parents=True, exist_ok=True)
 
-            pathPlus.symlink_update("/bisos/Site", "/bisos/var/sites/selected")
+            pathPlus.symlink_update("/bisos/var/sites/selected", "/bisos/site",)
 
             return cmndOutcome
 
