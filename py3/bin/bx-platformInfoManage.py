@@ -78,7 +78,7 @@ G = icm.IcmGlobalContext()
 G.icmLibsAppend = __file__
 G.icmCmndsLibsAppend = __file__
 
-# from blee.icmPlayer import bleep
+# from bisos.csPlayer import bleep
 
 ####+END:
 
@@ -304,7 +304,7 @@ class examples(icm.Cmnd):
         
         icm.G_commonBriefExamples()    
 
-        # bleep.examples_icmBasic()
+        # bleep.examples_csBasic()
 
         
 ####+BEGIN: bx:icm:python:cmnd:subSection :title "Dev And Testing"
