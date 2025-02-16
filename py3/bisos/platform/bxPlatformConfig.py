@@ -1,94 +1,108 @@
 # -*- coding: utf-8 -*-
-"""\
-* *[Summary]* ::  A /library/ to support icmsPkg facilities
-"""
 
-####+BEGIN: bx:icm:python:top-of-file :partof "bystar" :copyleft "halaal+minimal"
-"""
-*  This file:/de/bx/nne/dev-py/pypi/pkgs/bisos/platform/dev/bisos/platform/bxPlatformConfig.py :: [[elisp:(org-cycle)][| ]]
- is part of The Libre-Halaal ByStar Digital Ecosystem. http://www.by-star.net
- *CopyLeft*  This Software is a Libre-Halaal Poly-Existential. See http://www.freeprotocols.org
- A Python Interactively Command Module (PyICM). Part Of ByStar.
- Best Developed With COMEEGA-Emacs And Best Used With Blee-ICM-Players.
- Warning: All edits wityhin Dynamic Blocks may be lost.
-"""
+""" #+begin_org
+* ~[Summary]~ :: A =CmndSvc= for
+#+end_org """
+
+####+BEGIN: b:py3:cs:file/dblockControls :classification "cs-u"
+""" #+begin_org
+* [[elisp:(org-cycle)][| /Control Parameters Of This File/ |]] :: dblk ctrls classifications=cs-u
+#+BEGIN_SRC emacs-lisp
+(setq-local b:dblockControls t) ; (setq-local b:dblockControls nil)
+(put 'b:dblockControls 'py3:cs:Classification "cs-u") ; one of cs-mu, cs-u, cs-lib, bpf-lib, pyLibPure
+#+END_SRC
+#+RESULTS:
+: cs-u
+#+end_org """
 ####+END:
 
-
-"""
-*  [[elisp:(org-cycle)][| *Lib-Module-INFO:* |]] :: Author, Copyleft and Version Information
-"""
-
-####+BEGIN: bx:global:lib:name-py :style "fileName"
-__libName__ = "bxPlatformConfig"
+####+BEGIN: b:prog:file/proclamations :outLevel 1
+""" #+begin_org
+* *[[elisp:(org-cycle)][| Proclamations |]]* :: Libre-Halaal Software --- Part Of BISOS ---  Poly-COMEEGA Format.
+** This is Libre-Halaal Software. © Neda Communications, Inc. Subject to AGPL.
+** It is part of BISOS (ByStar Internet Services OS)
+** Best read and edited  with Blee in Poly-COMEEGA (Polymode Colaborative Org-Mode Enhance Emacs Generalized Authorship)
+#+end_org """
 ####+END:
 
-####+BEGIN: bx:global:timestamp:version-py :style "date"
-__version__ = "202006170301"
+####+BEGIN: b:prog:file/particulars :authors ("./inserts/authors-mb.org")
+""" #+begin_org
+* *[[elisp:(org-cycle)][| Particulars |]]* :: Authors, version
+** This File: /bisos/git/bxRepos/bisos-pip/platform/py3/bisos/platform/bxPlatformConfig.py
+** Authors: Mohsen BANAN, http://mohsen.banan.1.byname.net/contact
+#+end_org """
 ####+END:
 
-####+BEGIN: bx:global:icm:status-py :status "Production"
-__status__ = "Production"
+####+BEGIN: b:py3:file/particulars-csInfo :status "inUse"
+""" #+begin_org
+* *[[elisp:(org-cycle)][| Particulars-csInfo |]]*
+#+end_org """
+import typing
+csInfo: typing.Dict[str, typing.Any] = { 'moduleName': ['bxPlatformConfig'], }
+csInfo['version'] = '202502114408'
+csInfo['status']  = 'inUse'
+csInfo['panel'] = 'bxPlatformConfig-Panel.org'
+csInfo['groupingType'] = 'IcmGroupingType-pkged'
+csInfo['cmndParts'] = 'IcmCmndParts[common] IcmCmndParts[param]'
 ####+END:
 
-__credits__ = [""]
+""" #+begin_org
+* [[elisp:(org-cycle)][| ~Description~ |]] :: [[file:/bisos/git/auth/bxRepos/blee-binders/bisos-core/COMEEGA/_nodeBase_/fullUsagePanel-en.org][BISOS COMEEGA Panel]]
+Module description comes here.
+** Relevant Panels:
+** Status: In use with BISOS
+** /[[elisp:(org-cycle)][| Planned Improvements |]]/ :
+*** TODO complete fileName in particulars.
+#+end_org """
 
-####+BEGIN: bx:dblock:global:file-insert-cond :cond "./blee.el" :file "/libre/ByStar/InitialTemplates/update/sw/icm/py/icmInfo-mbNedaGpl.py"
-icmInfo = {
-    'authors':         ["[[http://mohsen.1.banan.byname.net][Mohsen Banan]]"],
-    'copyright':       "Copyright 2017, [[http://www.neda.com][Neda Communications, Inc.]]",
-    'licenses':        ["[[https://www.gnu.org/licenses/agpl-3.0.en.html][Affero GPL]]", "Libre-Halaal Services License", "Neda Commercial License"],
-    'maintainers':     ["[[http://mohsen.1.banan.byname.net][Mohsen Banan]]",],
-    'contacts':        ["[[http://mohsen.1.banan.byname.net/contact]]",],
-    'partOf':          ["[[http://www.by-star.net][Libre-Halaal ByStar Digital Ecosystem]]",]
-}
-####+END:
-
-####+BEGIN: bx:icm:python:topControls 
-"""
-*  [[elisp:(org-cycle)][|/Controls/| ]] :: [[elisp:(org-show-subtree)][|=]]  [[elisp:(show-all)][Show-All]]  [[elisp:(org-shifttab)][Overview]]  [[elisp:(progn (org-shifttab) (org-content))][Content]] | [[file:Panel.org][Panel]] | [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] | [[elisp:(bx:org:run-me)][Run]] | [[elisp:(bx:org:run-me-eml)][RunEml]] | [[elisp:(delete-other-windows)][(1)]] | [[elisp:(progn (save-buffer) (kill-buffer))][S&Q]]  [[elisp:(save-buffer)][Save]]  [[elisp:(kill-buffer)][Quit]] [[elisp:(org-cycle)][| ]]
+####+BEGIN: b:prog:file/orgTopControls :outLevel 1
+""" #+begin_org
+* [[elisp:(org-cycle)][| Controls |]] :: [[elisp:(delete-other-windows)][(1)]] | [[elisp:(show-all)][Show-All]]  [[elisp:(org-shifttab)][Overview]]  [[elisp:(progn (org-shifttab) (org-content))][Content]] | [[file:Panel.org][Panel]] | [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] | [[elisp:(bx:org:run-me)][Run]] | [[elisp:(bx:org:run-me-eml)][RunEml]] | [[elisp:(progn (save-buffer) (kill-buffer))][S&Q]]  [[elisp:(save-buffer)][Save]]  [[elisp:(kill-buffer)][Quit]] [[elisp:(org-cycle)][| ]]
 ** /Version Control/ ::  [[elisp:(call-interactively (quote cvs-update))][cvs-update]]  [[elisp:(vc-update)][vc-update]] | [[elisp:(bx:org:agenda:this-file-otherWin)][Agenda-List]]  [[elisp:(bx:org:todo:this-file-otherWin)][ToDo-List]]
-"""
+
+#+end_org """
 ####+END:
 
-####+BEGIN: bx:dblock:global:file-insert-cond :cond "./blee.el" :file "/libre/ByStar/InitialTemplates/software/plusOrg/dblock/inserts/pyWorkBench.org"
-"""
-* 
-*  /Python Workbench/ ::  [[elisp:(org-cycle)][| ]]  [[elisp:(python-check (format "pyclbr %s" (bx:buf-fname))))][pyclbr]] || [[elisp:(python-check (format "pyflakes %s" (bx:buf-fname)))][pyflakes]] | [[elisp:(python-check (format "pychecker %s" (bx:buf-fname))))][pychecker (executes)]] | [[elisp:(python-check (format "pep8 %s" (bx:buf-fname))))][pep8]] | [[elisp:(python-check (format "flake8 %s" (bx:buf-fname))))][flake8]] | [[elisp:(python-check (format "pylint %s" (bx:buf-fname))))][pylint]]  [[elisp:(org-cycle)][| ]]
-"""
+####+BEGIN: b:py3:file/workbench :outLevel 1
+""" #+begin_org
+* [[elisp:(org-cycle)][| Workbench |]] :: [[elisp:(python-check (format "/bisos/venv/py3/bisos3/bin/python -m pyclbr %s" (bx:buf-fname))))][pyclbr]] || [[elisp:(python-check (format "/bisos/venv/py3/bisos3/bin/python -m pydoc ./%s" (bx:buf-fname))))][pydoc]] || [[elisp:(python-check (format "/bisos/pipx/bin/pyflakes %s" (bx:buf-fname)))][pyflakes]] | [[elisp:(python-check (format "/bisos/pipx/bin/pychecker %s" (bx:buf-fname))))][pychecker (executes)]] | [[elisp:(python-check (format "/bisos/pipx/bin/pycodestyle %s" (bx:buf-fname))))][pycodestyle]] | [[elisp:(python-check (format "/bisos/pipx/bin/flake8 %s" (bx:buf-fname))))][flake8]] | [[elisp:(python-check (format "/bisos/pipx/bin/pylint %s" (bx:buf-fname))))][pylint]]  [[elisp:(org-cycle)][| ]]
+#+end_org """
 ####+END:
 
-####+BEGIN: bx:icm:python:section :title "ContentsList"
-"""
-*  [[elisp:(beginning-of-buffer)][Top]] ################ [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(delete-other-windows)][(1)]]    *ContentsList*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] 
-"""
-####+END:
+####+BEGIN: b:py3:cs:framework/imports :basedOn "classification"
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  CsFrmWrk   [[elisp:(outline-show-subtree+toggle)][||]] *Imports* =Based on Classification=cs-u=
+#+end_org """
+from bisos import b
+from bisos.b import cs
+from bisos.b import b_io
+from bisos.common import csParam
 
-
-####+BEGIN: bx:dblock:python:icmItem :itemType "=Imports=" :itemTitle "*IMPORTS*"
-"""
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || =Imports=      :: *IMPORTS*  [[elisp:(org-cycle)][| ]]
-"""
-####+END:
-
-import os
 import collections
-#import enum
-
-####+BEGIN: bx:dblock:global:file-insert :file "/libre/ByStar/InitialTemplates/update/sw/icm/py/importUcfIcmG.py"
-from unisos import ucf
-from unisos import icm
-
-icm.unusedSuppressForEval(ucf.__file__)  # in case icm and ucf are not used
-
-G = icm.IcmGlobalContext()
-G.icmLibsAppend = __file__
-G.icmCmndsLibsAppend = __file__
-
 ####+END:
 
 from bisos.common import bisosPolicy
 from bisos.platform import bxPlatformThis
+
+import os
+
+####+BEGIN: b:py3:cs:orgItem/section :title "CSU-Lib Examples" :comment "-- Providing examples_csu"
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  /Section/    [[elisp:(outline-show-subtree+toggle)][||]] *CSU-Lib Examples* -- Providing examples_csu  [[elisp:(org-cycle)][| ]]
+#+end_org """
+####+END:
+
+####+BEGIN: blee:bxPanel:foldingSection :outLevel 0 :sep nil :title "CmndSvcs" :anchor ""  :extraInfo "Command Services Section"
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*     [[elisp:(outline-show-subtree+toggle)][| _CmndSvcs_: |]]  Command Services Section  [[elisp:(org-shifttab)][<)]] E|
+#+end_org """
+####+END:
+
+####+BEGIN: bx:icm:py3:section :title "CS-Commands"
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  /Section/    [[elisp:(outline-show-subtree+toggle)][||]] *CS-Commands*  [[elisp:(org-cycle)][| ]]
+#+end_org """
+####+END:
 
 ####+BEGIN: bx:dblock:python:section :title "Library Description (Overview)"
 """
@@ -96,35 +110,27 @@ from bisos.platform import bxPlatformThis
 """
 ####+END:
 
-####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "bxPlatformConfig_libOverview" :comment "" :parsMand "" :parsOpt "" :argsMin "0" :argsMax "3" :asFunc "" :interactiveP ""
-"""
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || ICM-Cmnd       :: /bxPlatformConfig_libOverview/ parsMand= parsOpt= argsMin=0 argsMax=3 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
-"""
-class bxPlatformConfig_libOverview(icm.Cmnd):
+####+BEGIN: b:py3:cs:cmnd/classHead :cmndName "bxPlatformConfig_libOverview" :comment "" :parsMand "" :parsOpt "" :argsMin 0 :argsMax 3 :pyInv ""
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  CmndSvc-   [[elisp:(outline-show-subtree+toggle)][||]] <<bxPlatformConfig_libOverview>>  =verify= argsMax=3 ro=cli   [[elisp:(org-cycle)][| ]]
+#+end_org """
+class bxPlatformConfig_libOverview(cs.Cmnd):
     cmndParamsMandatory = [ ]
     cmndParamsOptional = [ ]
     cmndArgsLen = {'Min': 0, 'Max': 3,}
 
-    @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
     def cmnd(self,
-             interactive=False,        # Can also be called non-interactively
-             argsList=[],         # or Args-Input
-             ):
-        cmndOutcome = self.getOpOutcome()
-        if interactive:
-            if not self.cmndLineValidate(outcome=cmndOutcome):
-                return cmndOutcome
-            effectiveArgsList = G.icmRunArgsGet().cmndArgs
-        else:
-            effectiveArgsList = argsList
+             rtInv: cs.RtInvoker,
+             cmndOutcome: b.op.Outcome,
+             argsList: typing.Optional[list[str]]=None,  # CsArgs
+    ) -> b.op.Outcome:
 
+        failed = b_io.eh.badOutcome
         callParamsDict = {}
-        if not icm.cmndCallParamsValidate(callParamsDict, interactive, outcome=cmndOutcome):
-            return cmndOutcome
-
+        if self.invocationValidate(rtInv, cmndOutcome, callParamsDict, argsList).isProblematic():
+            return failed(cmndOutcome)
         cmndArgsSpecDict = self.cmndArgsSpec()
-        if not self.cmndArgsValidate(effectiveArgsList, cmndArgsSpecDict, outcome=cmndOutcome):
-            return cmndOutcome
 ####+END:
 
         moduleDescription = """
@@ -150,9 +156,12 @@ This module is part of BISOS and its primary documentation is in  http://www.by-
 **      [End-Of-Status]
 """
 
+        print("NOTYET")
+        return 
+
 ####+BEGIN: bx:dblock:global:file-insert-cond :cond "./blee.el" :file "/libre/ByStar/InitialTemplates/update/sw/icm/py/moduleOverview.py"
         icm.unusedSuppressForEval(moduleUsage, moduleStatus)
-        actions = self.cmndArgsGet("0&2", cmndArgsSpecDict, effectiveArgsList)
+        actions = self.cmndArgsGet("0&2", cmndArgsSpecDict, argsList)
         if actions[0] == "all":
             cmndArgsSpec = cmndArgsSpecDict.argPositionFind("0&2")
             argChoices = cmndArgsSpec.argChoicesGet()
@@ -160,22 +169,23 @@ This module is part of BISOS and its primary documentation is in  http://www.by-
             actions = argChoices
         for each in actions:
             print(each)
-            if interactive:
+            if rtInv.outs:
                 #print( str( __doc__ ) )  # This is the Summary: from the top doc-string
                 #version(interactive=True)
                 exec("""print({})""".format(each))
                 
         return(format(str(__doc__)+moduleDescription))
 
-    """
+        """
 **  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Method-anyOrNone :: /cmndArgsSpec/ retType=bool argsList=nil deco=default  [[elisp:(org-cycle)][| ]]
 """
-    @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
-    def cmndArgsSpec(self):
+
+# @io.track.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
+    #def cmndArgsSpec(self):
         """
 ***** Cmnd Args Specification
 """
-        cmndArgsSpecDict = icm.CmndArgsSpecDict()
+        cmndArgsSpecDict = cs.CmndArgsSpecDict()
         cmndArgsSpecDict.argsDictAdd(
             argPosition="0&2",
             argName="actions",
@@ -188,13 +198,13 @@ This module is part of BISOS and its primary documentation is in  http://www.by-
 ####+END:
 
 
-####+BEGIN: bx:icm:python:section :title "Obtain ICM-Package General Execution Bases"
+####+BEGIN: bx:cs:python:section :title "Obtain ICM-Package General Execution Bases"
 """
 *  [[elisp:(beginning-of-buffer)][Top]] ################ [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(delete-other-windows)][(1)]]    *Obtain ICM-Package General Execution Bases*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] 
 """
 ####+END:
 
-####+BEGIN: bx:icm:python:func :funcName "configBaseDir_obtain" :funcType "anyOrNone" :retType "bool" :deco "" :argsList ""
+####+BEGIN: bx:cs:python:func :funcName "configBaseDir_obtain" :funcType "anyOrNone" :retType "bool" :deco "" :argsList ""
 """
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /configBaseDir_obtain/ retType=bool argsList=nil  [[elisp:(org-cycle)][| ]]
 """
@@ -202,7 +212,7 @@ def configBaseDir_obtain():
 ####+END:
     return bxPlatformThis.pkgBase_configDir()
 
-####+BEGIN: bx:icm:python:func :funcName "configPkgInfoBaseDir_obtain" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "configPkgInfoBaseDir_obtain" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /configPkgInfoBaseDir_obtain/ retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -218,7 +228,7 @@ def configPkgInfoBaseDir_obtain(
     )
 
 
-####+BEGIN: bx:icm:python:func :funcName "configPkgInfoFpBaseDir_obtain" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "configPkgInfoFpBaseDir_obtain" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /configPkgInfoFpBaseDir_obtain/ retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -240,7 +250,7 @@ def configPkgInfoFpBaseDir_obtain(
 """
 ####+END:
 
-####+BEGIN: bx:icm:python:func :funcName "bisosUserName_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "bisosUserName_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /bisosUserName_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -252,13 +262,13 @@ def bisosUserName_fpObtain(
         configBaseDir = configBaseDir_obtain()
         
     return(
-        icm.FILE_ParamValueReadFrom(
+        b.fp.FileParamValueReadFrom(
             parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="bisosUserName")
     )
 
     
-####+BEGIN: bx:icm:python:func :funcName "bisosGroupName_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "bisosGroupName_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /bisosGroupName_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -270,12 +280,12 @@ def bisosGroupName_fpObtain(
         configBaseDir = configBaseDir_obtain()
 
     return(
-        icm.FILE_ParamValueReadFrom(
+        b.fp.FileParamValueReadFrom(
             parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="bisosGroupName")
     )
 
-####+BEGIN: bx:icm:python:func :funcName "bystarUserName_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "bystarUserName_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  Func-anyOrNone :: /bystarUserName_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -287,13 +297,13 @@ def bystarUserName_fpObtain(
         configBaseDir = configBaseDir_obtain()
         
     return(
-        icm.FILE_ParamValueReadFrom(
+        b.fp.FileParamValueReadFrom(
             parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="bystarsUserName")
     )
 
     
-####+BEGIN: bx:icm:python:func :funcName "bystarGroupName_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "bystarGroupName_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  Func-anyOrNone :: /bystarGroupName_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -305,13 +315,13 @@ def bystarGroupName_fpObtain(
         configBaseDir = configBaseDir_obtain()
 
     return(
-        icm.FILE_ParamValueReadFrom(
+        b.fp.FileParamValueReadFrom(
             parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="bystarGroupName")
     )
 
 
-####+BEGIN: bx:icm:python:func :funcName "rootDir_provisioners_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "rootDir_provisioners_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  Func-anyOrNone :: /rootDir_provisioners_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -323,12 +333,12 @@ def rootDir_provisioners_fpObtain(
         configBaseDir = configBaseDir_obtain()
 
     return(
-        icm.FILE_ParamValueReadFrom(
+        b.fp.FileParamValueReadFrom(
             parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="rootDir_provisioners")
     )
 
-####+BEGIN: bx:icm:python:func :funcName "rootDir_bisos_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "rootDir_bisos_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 ()*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /rootDir_bisos_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -340,12 +350,12 @@ def rootDir_bisos_fpObtain(
         configBaseDir = configBaseDir_obtain()
 
     return(
-        icm.FILE_ParamValueReadFrom(
+        b.fp.FileParamValueReadFrom(
             parRoot= os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="rootDir_bisos")
     )
 
-####+BEGIN: bx:icm:python:func :funcName "rootDir_bxo_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "rootDir_bxo_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /rootDir_bxo_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -357,12 +367,12 @@ def rootDir_bxo_fpObtain(
         configBaseDir = configBaseDir_obtain()
 
     return(
-        icm.FILE_ParamValueReadFrom(
+        b.fp.FileParamValueReadFrom(
             parRoot= os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="rootDir_bxo")
     )
 
-####+BEGIN: bx:icm:python:func :funcName "rootDir_deRun_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "rootDir_deRun_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /rootDir_deRun_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -374,14 +384,14 @@ def rootDir_deRun_fpObtain(
         configBaseDir = configBaseDir_obtain()
 
     return(
-        icm.FILE_ParamValueReadFrom(
+        b.fp.FileParamValueReadFrom(
             parRoot= os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="rootDir_deRun")
     )
 
     
 
-####+BEGIN: bx:icm:python:func :funcName "rootDir_foreignBxo_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "rootDir_foreignBxo_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /rootDir_foreignBxo_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -393,13 +403,13 @@ def rootDir_foreignBxo_fpObtain(
         configBaseDir = configBaseDir_obtain()
 
     return(
-        icm.FILE_ParamValueReadFrom(
+        b.fp.FileParamValueReadFrom(
             parRoot=os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
             parName="rootDir_foreignBxo")
     )
 
 
-# ####+BEGIN: bx:icm:python:func :funcName "platformControlBaseDir_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+# ####+BEGIN: bx:cs:python:func :funcName "platformControlBaseDir_fpObtain" :comment "Configuration Parameter" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 # """
 # *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /platformControlBaseDir_fpObtain/ =Configuration Parameter= retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 # """
@@ -409,12 +419,12 @@ def rootDir_foreignBxo_fpObtain(
 # ####+END:
 #     if configBaseDir:
 #         return(
-#             icm.FILE_ParamValueReadFrom(
+#             b.fp.FileParamValueReadFrom(
 #                 parRoot= os.path.abspath("{}/pkgInfo/fp".format(configBaseDir)),
 #                 parName="platformControlBaseDir")
 #         )
 #     else:
-#         icm.EH_problem_usageError("Missing Argument")
+#         b_io.eh.problem_usageError("Missing Argument")
 #         return None
     
 
@@ -426,143 +436,143 @@ def rootDir_foreignBxo_fpObtain(
 ####+END:
 
 
-####+BEGIN: bx:icm:python:func :funcName "commonParamsSpecify" :funcType "void" :retType "bool" :deco "" :argsList "icmParams"
+####+BEGIN: bx:cs:python:func :funcName "commonParamsSpecify" :funcType "void" :retType "bool" :deco "" :argsList "csParams"
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-void      :: /commonParamsSpecify/ retType=bool argsList=(icmParams)  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-void      :: /commonParamsSpecify/ retType=bool argsList=(csParams)  [[elisp:(org-cycle)][| ]]
 """
 def commonParamsSpecify(
-    icmParams,
+    csParams,
 ):
 ####+END:
     
-    # icmParams.parDictAdd(
+    # csParams.parDictAdd(
     #     parName='icmsPkgName',
     #     parDescription="ICMs Package Name",
     #     parDataType=None,
     #     parDefault=None,
     #     parChoices=["any"],
-    #     parScope=icm.ICM_ParamScope.TargetParam,
+    #     parScope=cs.CmndParamScope.TargetParam,
     #     argparseShortOpt=None,
     #     argparseLongOpt='--icmsPkgName',
     # )
 
-    # icmParams.parDictAdd(
+    # csParams.parDictAdd(
     #     parName='platformControlBaseDir',
     #     parDescription="ICMs Package Run Environment -- A BaseDir for var/log/tmp (bxo=current bxo)",
     #     parDataType=None,
     #     parDefault=None,
     #     parChoices=["any"],
-    #     parScope=icm.ICM_ParamScope.TargetParam,
+    #     parScope=cs.CmndParamScope.TargetParam,
     #     argparseShortOpt=None,
     #     argparseLongOpt='--platformControlBaseDir',
     # )
 
-    icmParams.parDictAdd(
+    csParams.parDictAdd(
         parName='configBaseDir',
         parDescription="Root Of pkgInfo/fp from which file parameters will be read",
         parDataType=None,
         parDefault=None,
         parChoices=["any"],
-        parScope=icm.ICM_ParamScope.TargetParam,
+        parScope=cs.CmndParamScope.TargetParam,
         argparseShortOpt=None,
         argparseLongOpt='--configBaseDir',
     )
     
-    icmParams.parDictAdd(
+    csParams.parDictAdd(
         parName='bisosUserName',
         parDescription="BISOS Default UserName",
         parDataType=None,
         parDefault=None,
         parChoices=["any"],
-        parScope=icm.ICM_ParamScope.TargetParam,
+        parScope=cs.CmndParamScope.TargetParam,
         argparseShortOpt=None,
         argparseLongOpt='--bisosUserName',
     )
     
-    icmParams.parDictAdd(
+    csParams.parDictAdd(
         parName='bisosGroupName',
         parDescription="BISOS Default GroupName",
         parDataType=None,
         parDefault=None,
         parChoices=["any"],
-        parScope=icm.ICM_ParamScope.TargetParam,
+        parScope=cs.CmndParamScope.TargetParam,
         argparseShortOpt=None,
         argparseLongOpt='--bisosGroupName',
     )
 
-    icmParams.parDictAdd(
+    csParams.parDictAdd(
         parName='bystarUserName',
         parDescription="BYSTAR Default UserName",
         parDataType=None,
         parDefault=None,
         parChoices=["any"],
-        parScope=icm.ICM_ParamScope.TargetParam,
+        parScope=cs.CmndParamScope.TargetParam,
         argparseShortOpt=None,
         argparseLongOpt='--bystarUserName',
     )
     
-    icmParams.parDictAdd(
+    csParams.parDictAdd(
         parName='bystarGroupName',
         parDescription="BYSTAR Default GroupName",
         parDataType=None,
         parDefault=None,
         parChoices=["any"],
-        parScope=icm.ICM_ParamScope.TargetParam,
+        parScope=cs.CmndParamScope.TargetParam,
         argparseShortOpt=None,
         argparseLongOpt='--bystarGroupName',
     )
     
-    icmParams.parDictAdd(
+    csParams.parDictAdd(
         parName='rootDir_provisioners',
         parDescription="Root Dir For bisos (defaults to /opt/bisosProvisioner)",
         parDataType=None,
         parDefault=None,
         parChoices=["any"],
-        parScope=icm.ICM_ParamScope.TargetParam,
+        parScope=cs.CmndParamScope.TargetParam,
         argparseShortOpt=None,
         argparseLongOpt='--rootDir_provisioners',
     )
     
-    icmParams.parDictAdd(
+    csParams.parDictAdd(
         parName='rootDir_bisos',
         parDescription="Root Dir For bisos (defaults to /bisos)",
         parDataType=None,
         parDefault=None,
         parChoices=["any"],
-        parScope=icm.ICM_ParamScope.TargetParam,
+        parScope=cs.CmndParamScope.TargetParam,
         argparseShortOpt=None,
         argparseLongOpt='--rootDir_bisos',
     )
 
-    icmParams.parDictAdd(
+    csParams.parDictAdd(
         parName='rootDir_bxo',
         parDescription="Root Dir For BxO -- ByStar Objects (defaults to /bxo)",
         parDataType=None,
         parDefault=None,
         parChoices=["any"],
-        parScope=icm.ICM_ParamScope.TargetParam,
+        parScope=cs.CmndParamScope.TargetParam,
         argparseShortOpt=None,
         argparseLongOpt='--rootDir_bxo',
     )
 
-    icmParams.parDictAdd(
+    csParams.parDictAdd(
         parName='rootDir_deRun',
         parDescription="Root Dir For deRun -- ByStar Objects (defaults to /de/run)",
         parDataType=None,
         parDefault=None,
         parChoices=["any"],
-        parScope=icm.ICM_ParamScope.TargetParam,
+        parScope=cs.CmndParamScope.TargetParam,
         argparseShortOpt=None,
         argparseLongOpt='--rootDir_deRun',
     )
 
-    icmParams.parDictAdd(
+    csParams.parDictAdd(
         parName='rootDir_foreignBxo',
         parDescription="Root Dir For Foreign BxOs -- ByStar Objects (defaults to ~bisosUserName/foreignBxo)",
         parDataType=None,
         parDefault=None,
         parChoices=["any"],
-        parScope=icm.ICM_ParamScope.TargetParam,
+        parScope=cs.CmndParamScope.TargetParam,
         argparseShortOpt=None,
         argparseLongOpt='--rootDir_foreignBxo',
     )
@@ -575,7 +585,7 @@ def commonParamsSpecify(
 ####+END:
 
 
-####+BEGIN: bx:icm:python:func :funcName "examples_pkgInfoParsFull" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
+####+BEGIN: bx:cs:python:func :funcName "examples_pkgInfoParsFull" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "configBaseDir"
 """
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /examples_pkgInfoParsFull/ retType=bool argsList=(configBaseDir)  [[elisp:(org-cycle)][| ]]
 """
@@ -587,19 +597,19 @@ def examples_pkgInfoParsFull(
 ** Auxiliary examples to be commonly used.
 """
     def cpsInit(): return collections.OrderedDict()
-    def menuItem(verbosity): icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity=verbosity,
+    def menuItem(verbosity): cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity=verbosity,
                                                   comment='none', icmWrapper=None, icmName=None) # verbosity: 'little' 'basic' 'none'
-    def execLineEx(cmndStr): icm.ex_gExecMenuItem(execLine=cmndStr)
+    def execLineEx(cmndStr): cs.examples.execInsert(execLine=cmndStr)
     
-    icm.cmndExampleMenuChapter(' =FP Values=  *pkgInfo Get Parameters*')
+    cs.examples.menuChapter(' =FP Values=  *pkgInfo Get Parameters*')
 
     cmndName = "pkgInfoParsGet" ; cmndArgs = "" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir 
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsGet" ; cmndArgs = "" ; cps=cpsInit(); menuItem(verbosity='none')
 
-    icm.cmndExampleMenuChapter(' =FP Values=  *PkgInfo Defaults ParsSet  --*')
+    cs.examples.menuChapter(' =FP Values=  *PkgInfo Defaults ParsSet  --*')
 
     cmndName = "pkgInfoParsDefaultsSet" ; cmndArgs = "bxoPolicy /" ;
     cpsInit();  cps['configBaseDir'] = configBaseDir ;
@@ -613,62 +623,62 @@ def examples_pkgInfoParsFull(
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; 
     cps['bystarUserName'] = "bystar" ; cps['bystarGroupName'] = "bisos"
     cps['rootDir_foreignBxo'] = "${HOME}/foreignBxo"
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsDefaultsSet" ; cmndArgs = "externalPolicy" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; 
     cps['bisosUserName'] = "bisos" ; cps['bisosGroupName'] = "bisos" 
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
-    icm.cmndExampleMenuChapter(' =FP Values=  *PkgInfo ParsSet -- Set Parameters Explicitly*')
+    cs.examples.menuChapter(' =FP Values=  *PkgInfo ParsSet -- Set Parameters Explicitly*')
      
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['bisosUserName'] = "bisos"
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['bisosGroupName'] = "bisos"
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
     
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['bystarUserName'] = "bystar"
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['bystarGroupName'] = "bisos"
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['rootDir_provisioners'] = "/opt/bisosProvisioner"
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['rootDir_bisos'] = "/bisos" 
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['rootDir_bxo'] = "/bxo" 
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['rootDir_deRun'] = "/de/run" 
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['rootDir_foreignBxo'] = "${HOME}/foreignBxo" 
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     # cmndName = "pkgInfoParsSet" ; cmndArgs = "" ;
     # cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir ; cps['platformControlBaseDir'] = "${HOME}/bisosControl"
-    # icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    # cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
     
     cmndName = "pkgInfoParsSet" ; cmndArgs = "anyName=anyValue" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, verbosity='little')
 
     cmndName = "pkgInfoParsSet" ; cmndArgs = "anyName=anyValue" ;
     cps = collections.OrderedDict() ;  cps['configBaseDir'] = configBaseDir
-    icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, icmWrapper="echo", verbosity='little')
+    cs.examples.cmndInsert(cmndName, cps, cmndArgs, icmWrapper="echo", verbosity='little')
     
 
 ####+BEGIN: bx:dblock:python:section :title "File Parameters Get/Set -- Commands"
@@ -678,7 +688,7 @@ def examples_pkgInfoParsFull(
 ####+END:
 
 
-####+BEGIN: bx:icm:python:func :funcName "FP_readTreeAtBaseDir_CmndOutput" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "interactive fpBaseDir cmndOutcome"
+####+BEGIN: bx:cs:python:func :funcName "FP_readTreeAtBaseDir_CmndOutput" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "interactive fpBaseDir cmndOutcome"
 """
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /FP_readTreeAtBaseDir_CmndOutput/ retType=bool argsList=(interactive fpBaseDir cmndOutcome)  [[elisp:(org-cycle)][| ]]
 """
@@ -702,29 +712,27 @@ def FP_readTreeAtBaseDir_CmndOutput(
     )
 
 
-####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "pkgInfoParsGet" :comment "" :parsMand "" :parsOpt "configBaseDir" :argsMin "0" :argsMax "0" :asFunc "" :interactiveP ""
-"""
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || ICM-Cmnd       :: /pkgInfoParsGet/ parsMand= parsOpt=configBaseDir argsMin=0 argsMax=0 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
-"""
-class pkgInfoParsGet(icm.Cmnd):
+####+BEGIN: b:py3:cs:cmnd/classHead :cmndName "pkgInfoParsGet" :comment "" :parsMand "" :parsOpt "configBaseDir" :argsMin 0 :argsMax 0 :pyInv ""
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  CmndSvc-   [[elisp:(outline-show-subtree+toggle)][||]] <<pkgInfoParsGet>>  =verify= parsOpt=configBaseDir ro=cli   [[elisp:(org-cycle)][| ]]
+#+end_org """
+class pkgInfoParsGet(cs.Cmnd):
     cmndParamsMandatory = [ ]
     cmndParamsOptional = [ 'configBaseDir', ]
     cmndArgsLen = {'Min': 0, 'Max': 0,}
 
-    @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
     def cmnd(self,
-        interactive=False,        # Can also be called non-interactively
-        configBaseDir=None,         # or Cmnd-Input
-    ):
-        cmndOutcome = self.getOpOutcome()
-        if interactive:
-            if not self.cmndLineValidate(outcome=cmndOutcome):
-                return cmndOutcome
+             rtInv: cs.RtInvoker,
+             cmndOutcome: b.op.Outcome,
+             configBaseDir: typing.Optional[str]=None,  # Cs Optional Param
+    ) -> b.op.Outcome:
 
+        failed = b_io.eh.badOutcome
         callParamsDict = {'configBaseDir': configBaseDir, }
-        if not icm.cmndCallParamsValidate(callParamsDict, interactive, outcome=cmndOutcome):
-            return cmndOutcome
-        configBaseDir = callParamsDict['configBaseDir']
+        if self.invocationValidate(rtInv, cmndOutcome, callParamsDict, None).isProblematic():
+            return failed(cmndOutcome)
+        configBaseDir = csParam.mappedValue('configBaseDir', configBaseDir)
 ####+END:
 
         if not configBaseDir:
@@ -746,60 +754,52 @@ class pkgInfoParsGet(icm.Cmnd):
 """
 
 
-####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "pkgInfoParsSet" :comment "" :parsMand "" :parsOpt "configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo" :argsMin "0" :argsMax "1000" :asFunc "" :interactiveP ""
-"""
-*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  ICM-Cmnd       :: /pkgInfoParsSet/ parsMand= parsOpt=configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo argsMin=0 argsMax=1000 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
-"""
-class pkgInfoParsSet(icm.Cmnd):
+####+BEGIN: b:py3:cs:cmnd/classHead :cmndName "pkgInfoParsSet" :comment "" :parsMand "" :parsOpt "configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo" :argsMin 0 :argsMax 1000 :pyInv ""
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  CmndSvc-   [[elisp:(outline-show-subtree+toggle)][||]] <<pkgInfoParsSet>>  =verify= parsOpt=configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo argsMax=1000 ro=cli   [[elisp:(org-cycle)][| ]]
+#+end_org """
+class pkgInfoParsSet(cs.Cmnd):
     cmndParamsMandatory = [ ]
     cmndParamsOptional = [ 'configBaseDir', 'bisosUserName', 'bisosGroupName', 'bystarUserName', 'bystarGroupName', 'rootDir_provisioners', 'rootDir_bisos', 'rootDir_bxo', 'rootDir_deRun', 'rootDir_foreignBxo', ]
     cmndArgsLen = {'Min': 0, 'Max': 1000,}
 
-    @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
     def cmnd(self,
-        interactive=False,        # Can also be called non-interactively
-        configBaseDir=None,         # or Cmnd-Input
-        bisosUserName=None,         # or Cmnd-Input
-        bisosGroupName=None,         # or Cmnd-Input
-        bystarUserName=None,         # or Cmnd-Input
-        bystarGroupName=None,         # or Cmnd-Input
-        rootDir_provisioners=None,         # or Cmnd-Input
-        rootDir_bisos=None,         # or Cmnd-Input
-        rootDir_bxo=None,         # or Cmnd-Input
-        rootDir_deRun=None,         # or Cmnd-Input
-        rootDir_foreignBxo=None,         # or Cmnd-Input
-        argsList=[],         # or Args-Input
-    ):
-        cmndOutcome = self.getOpOutcome()
-        if interactive:
-            if not self.cmndLineValidate(outcome=cmndOutcome):
-                return cmndOutcome
-            effectiveArgsList = G.icmRunArgsGet().cmndArgs
-        else:
-            effectiveArgsList = argsList
+             rtInv: cs.RtInvoker,
+             cmndOutcome: b.op.Outcome,
+             configBaseDir: typing.Optional[str]=None,  # Cs Optional Param
+             bisosUserName: typing.Optional[str]=None,  # Cs Optional Param
+             bisosGroupName: typing.Optional[str]=None,  # Cs Optional Param
+             bystarUserName: typing.Optional[str]=None,  # Cs Optional Param
+             bystarGroupName: typing.Optional[str]=None,  # Cs Optional Param
+             rootDir_provisioners: typing.Optional[str]=None,  # Cs Optional Param
+             rootDir_bisos: typing.Optional[str]=None,  # Cs Optional Param
+             rootDir_bxo: typing.Optional[str]=None,  # Cs Optional Param
+             rootDir_deRun: typing.Optional[str]=None,  # Cs Optional Param
+             rootDir_foreignBxo: typing.Optional[str]=None,  # Cs Optional Param
+             argsList: typing.Optional[list[str]]=None,  # CsArgs
+    ) -> b.op.Outcome:
 
+        failed = b_io.eh.badOutcome
         callParamsDict = {'configBaseDir': configBaseDir, 'bisosUserName': bisosUserName, 'bisosGroupName': bisosGroupName, 'bystarUserName': bystarUserName, 'bystarGroupName': bystarGroupName, 'rootDir_provisioners': rootDir_provisioners, 'rootDir_bisos': rootDir_bisos, 'rootDir_bxo': rootDir_bxo, 'rootDir_deRun': rootDir_deRun, 'rootDir_foreignBxo': rootDir_foreignBxo, }
-        if not icm.cmndCallParamsValidate(callParamsDict, interactive, outcome=cmndOutcome):
-            return cmndOutcome
-        configBaseDir = callParamsDict['configBaseDir']
-        bisosUserName = callParamsDict['bisosUserName']
-        bisosGroupName = callParamsDict['bisosGroupName']
-        bystarUserName = callParamsDict['bystarUserName']
-        bystarGroupName = callParamsDict['bystarGroupName']
-        rootDir_provisioners = callParamsDict['rootDir_provisioners']
-        rootDir_bisos = callParamsDict['rootDir_bisos']
-        rootDir_bxo = callParamsDict['rootDir_bxo']
-        rootDir_deRun = callParamsDict['rootDir_deRun']
-        rootDir_foreignBxo = callParamsDict['rootDir_foreignBxo']
-
+        if self.invocationValidate(rtInv, cmndOutcome, callParamsDict, argsList).isProblematic():
+            return failed(cmndOutcome)
         cmndArgsSpecDict = self.cmndArgsSpec()
-        if not self.cmndArgsValidate(effectiveArgsList, cmndArgsSpecDict, outcome=cmndOutcome):
-            return cmndOutcome
+        configBaseDir = csParam.mappedValue('configBaseDir', configBaseDir)
+        bisosUserName = csParam.mappedValue('bisosUserName', bisosUserName)
+        bisosGroupName = csParam.mappedValue('bisosGroupName', bisosGroupName)
+        bystarUserName = csParam.mappedValue('bystarUserName', bystarUserName)
+        bystarGroupName = csParam.mappedValue('bystarGroupName', bystarGroupName)
+        rootDir_provisioners = csParam.mappedValue('rootDir_provisioners', rootDir_provisioners)
+        rootDir_bisos = csParam.mappedValue('rootDir_bisos', rootDir_bisos)
+        rootDir_bxo = csParam.mappedValue('rootDir_bxo', rootDir_bxo)
+        rootDir_deRun = csParam.mappedValue('rootDir_deRun', rootDir_deRun)
+        rootDir_foreignBxo = csParam.mappedValue('rootDir_foreignBxo', rootDir_foreignBxo)
 ####+END:
         if not configBaseDir:
             configBaseDir = configBaseDir_obtain()
 
-        cmndArgs = self.cmndArgsGet("0&-1", cmndArgsSpecDict, effectiveArgsList)
+        cmndArgs = self.cmndArgsGet("0&-1", cmndArgsSpecDict, argsList)
 
         def createPathAndFpWrite(
                 fpPath,
@@ -812,14 +812,14 @@ class pkgInfoParsSet(icm.Cmnd):
                 if not os.path.isdir(valuePath):
                     raise
             
-            icm.FILE_ParamWriteToPath(
+            icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=fpPath,
                 parValue=valuePath,
             )
 
         def processEachArg(argStr):
             varNameValue = argStr.split('=')
-            icm.FILE_ParamWriteToPath(
+            icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     varNameValue[0],
@@ -832,7 +832,7 @@ class pkgInfoParsSet(icm.Cmnd):
             processEachArg(each)
 
         if bisosUserName:
-            parNameFullPath = icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     "bisosUserName",
@@ -841,7 +841,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
 
         if bisosGroupName:
-            parNameFullPath = icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     "bisosGroupName",
@@ -849,7 +849,7 @@ class pkgInfoParsSet(icm.Cmnd):
                 parValue=bisosGroupName,
             )
         if bystarUserName:
-            parNameFullPath = icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     "bystarUserName",
@@ -858,7 +858,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
 
         if bystarGroupName:
-            parNameFullPath = icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     "bystarGroupName",
@@ -867,7 +867,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
 
         if rootDir_provisioners:
-            parNameFullPath = icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     "rootDir_provisioners",
@@ -876,7 +876,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
 
         if rootDir_bisos:
-            parNameFullPath = icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     "rootDir_bisos",
@@ -885,7 +885,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
 
         if rootDir_bxo:
-            parNameFullPath = icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     "rootDir_bxo",
@@ -894,7 +894,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
            
         if rootDir_deRun:
-            parNameFullPath = icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     "rootDir_deRun",
@@ -903,7 +903,7 @@ class pkgInfoParsSet(icm.Cmnd):
             )
            
         if rootDir_foreignBxo:
-            parNameFullPath = icm.FILE_ParamWriteToPath(
+            parNameFullPath = icm.b.fp.FileParamWriteToPath(
                 parNameFullPath=os.path.join(
                     configPkgInfoFpBaseDir_obtain(configBaseDir=configBaseDir),
                     "rootDir_foreignBxo",
@@ -911,27 +911,27 @@ class pkgInfoParsSet(icm.Cmnd):
                 parValue=rootDir_foreignBxo,
             )
 
-        if interactive:
-            parValue = icm.FILE_ParamValueReadFromPath(parNameFullPath)
-            icm.ANN_here("pkgInfoParsSet: {parValue} at {parNameFullPath}".
+        if rtInv.outs:
+            parValue = b.fp.FileParamValueReadFromPath(parNameFullPath)
+            b_io.ann.here("pkgInfoParsSet: {parValue} at {parNameFullPath}".
                          format(parValue=parValue, parNameFullPath=parNameFullPath))
 
         return cmndOutcome.set(
-            opError=icm.OpError.Success,
+            opError=b.OpError.Success,
             opResults=None,
         )
 
-####+BEGIN: bx:icm:python:method :methodName "cmndArgsSpec" :methodType "anyOrNone" :retType "bool" :deco "default" :argsList ""
-    """
-**  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Method-anyOrNone :: /cmndArgsSpec/ retType=bool argsList=nil deco=default  [[elisp:(org-cycle)][| ]]
-"""
-    @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
-    def cmndArgsSpec(self):
-####+END:        
+####+BEGIN: b:py3:cs:method/args :methodName "cmndArgsSpec" :methodType "anyOrNone" :retType "bool" :deco "default" :argsList "self"
+    """ #+begin_org
+**  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  Mtd-T-anyOrNone [[elisp:(outline-show-subtree+toggle)][||]] /cmndArgsSpec/ deco=default  deco=default  [[elisp:(org-cycle)][| ]]
+    #+end_org """
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
+    def cmndArgsSpec(self, ):
+####+END:
         """
 ***** Cmnd Args Specification
 """
-        cmndArgsSpecDict = icm.CmndArgsSpecDict()
+        cmndArgsSpecDict = cs.CmndArgsSpecDict()
         cmndArgsSpecDict.argsDictAdd(
             argPosition="0&-1",
             argName="cmndArgs",
@@ -944,72 +944,53 @@ class pkgInfoParsSet(icm.Cmnd):
 
     
 
-####+BEGIN: bx:icm:python:method :methodName "cmndDocStr" :methodType "anyOrNone" :retType "bool" :deco "default" :argsList ""
-    """
-**  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Method-anyOrNone :: /cmndDocStr/ retType=bool argsList=nil deco=default  [[elisp:(org-cycle)][| ]]
-"""
-    @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
-    def cmndDocStr(self):
-####+END:        
-        return """
-***** TODO [[elisp:(org-cycle)][| *CmndDesc:* | ]]  Place holder for this commands doc string.
-"""
-
-####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "pkgInfoParsDefaultsSet" :comment "" :parsMand "" :parsOpt "configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo" :argsMin "0" :argsMax "2" :asFunc "" :interactiveP ""
-"""
-*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  ICM-Cmnd       :: /pkgInfoParsDefaultsSet/ parsMand= parsOpt=configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo argsMin=0 argsMax=2 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
-"""
-class pkgInfoParsDefaultsSet(icm.Cmnd):
+####+BEGIN: b:py3:cs:cmnd/classHead :cmndName "pkgInfoParsDefaultsSet" :comment "" :parsMand "" :parsOpt "configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo" :argsMin 0 :argsMax 2 :pyInv ""
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  CmndSvc-   [[elisp:(outline-show-subtree+toggle)][||]] <<pkgInfoParsDefaultsSet>>  =verify= parsOpt=configBaseDir bisosUserName bisosGroupName bystarUserName bystarGroupName rootDir_provisioners rootDir_bisos rootDir_bxo rootDir_deRun rootDir_foreignBxo argsMax=2 ro=cli   [[elisp:(org-cycle)][| ]]
+#+end_org """
+class pkgInfoParsDefaultsSet(cs.Cmnd):
     cmndParamsMandatory = [ ]
     cmndParamsOptional = [ 'configBaseDir', 'bisosUserName', 'bisosGroupName', 'bystarUserName', 'bystarGroupName', 'rootDir_provisioners', 'rootDir_bisos', 'rootDir_bxo', 'rootDir_deRun', 'rootDir_foreignBxo', ]
     cmndArgsLen = {'Min': 0, 'Max': 2,}
 
-    @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
     def cmnd(self,
-        interactive=False,        # Can also be called non-interactively
-        configBaseDir=None,         # or Cmnd-Input
-        bisosUserName=None,         # or Cmnd-Input
-        bisosGroupName=None,         # or Cmnd-Input
-        bystarUserName=None,         # or Cmnd-Input
-        bystarGroupName=None,         # or Cmnd-Input
-        rootDir_provisioners=None,         # or Cmnd-Input
-        rootDir_bisos=None,         # or Cmnd-Input
-        rootDir_bxo=None,         # or Cmnd-Input
-        rootDir_deRun=None,         # or Cmnd-Input
-        rootDir_foreignBxo=None,         # or Cmnd-Input
-        argsList=[],         # or Args-Input
-    ):
-        cmndOutcome = self.getOpOutcome()
-        if interactive:
-            if not self.cmndLineValidate(outcome=cmndOutcome):
-                return cmndOutcome
-            effectiveArgsList = G.icmRunArgsGet().cmndArgs
-        else:
-            effectiveArgsList = argsList
+             rtInv: cs.RtInvoker,
+             cmndOutcome: b.op.Outcome,
+             configBaseDir: typing.Optional[str]=None,  # Cs Optional Param
+             bisosUserName: typing.Optional[str]=None,  # Cs Optional Param
+             bisosGroupName: typing.Optional[str]=None,  # Cs Optional Param
+             bystarUserName: typing.Optional[str]=None,  # Cs Optional Param
+             bystarGroupName: typing.Optional[str]=None,  # Cs Optional Param
+             rootDir_provisioners: typing.Optional[str]=None,  # Cs Optional Param
+             rootDir_bisos: typing.Optional[str]=None,  # Cs Optional Param
+             rootDir_bxo: typing.Optional[str]=None,  # Cs Optional Param
+             rootDir_deRun: typing.Optional[str]=None,  # Cs Optional Param
+             rootDir_foreignBxo: typing.Optional[str]=None,  # Cs Optional Param
+             argsList: typing.Optional[list[str]]=None,  # CsArgs
+    ) -> b.op.Outcome:
 
+        failed = b_io.eh.badOutcome
         callParamsDict = {'configBaseDir': configBaseDir, 'bisosUserName': bisosUserName, 'bisosGroupName': bisosGroupName, 'bystarUserName': bystarUserName, 'bystarGroupName': bystarGroupName, 'rootDir_provisioners': rootDir_provisioners, 'rootDir_bisos': rootDir_bisos, 'rootDir_bxo': rootDir_bxo, 'rootDir_deRun': rootDir_deRun, 'rootDir_foreignBxo': rootDir_foreignBxo, }
-        if not icm.cmndCallParamsValidate(callParamsDict, interactive, outcome=cmndOutcome):
-            return cmndOutcome
-        configBaseDir = callParamsDict['configBaseDir']
-        bisosUserName = callParamsDict['bisosUserName']
-        bisosGroupName = callParamsDict['bisosGroupName']
-        bystarUserName = callParamsDict['bystarUserName']
-        bystarGroupName = callParamsDict['bystarGroupName']
-        rootDir_provisioners = callParamsDict['rootDir_provisioners']
-        rootDir_bisos = callParamsDict['rootDir_bisos']
-        rootDir_bxo = callParamsDict['rootDir_bxo']
-        rootDir_deRun = callParamsDict['rootDir_deRun']
-        rootDir_foreignBxo = callParamsDict['rootDir_foreignBxo']
-
+        if self.invocationValidate(rtInv, cmndOutcome, callParamsDict, argsList).isProblematic():
+            return failed(cmndOutcome)
         cmndArgsSpecDict = self.cmndArgsSpec()
-        if not self.cmndArgsValidate(effectiveArgsList, cmndArgsSpecDict, outcome=cmndOutcome):
-            return cmndOutcome
+        configBaseDir = csParam.mappedValue('configBaseDir', configBaseDir)
+        bisosUserName = csParam.mappedValue('bisosUserName', bisosUserName)
+        bisosGroupName = csParam.mappedValue('bisosGroupName', bisosGroupName)
+        bystarUserName = csParam.mappedValue('bystarUserName', bystarUserName)
+        bystarGroupName = csParam.mappedValue('bystarGroupName', bystarGroupName)
+        rootDir_provisioners = csParam.mappedValue('rootDir_provisioners', rootDir_provisioners)
+        rootDir_bisos = csParam.mappedValue('rootDir_bisos', rootDir_bisos)
+        rootDir_bxo = csParam.mappedValue('rootDir_bxo', rootDir_bxo)
+        rootDir_deRun = csParam.mappedValue('rootDir_deRun', rootDir_deRun)
+        rootDir_foreignBxo = csParam.mappedValue('rootDir_foreignBxo', rootDir_foreignBxo)
 ####+END:
         if not configBaseDir:
             configBaseDir = configBaseDir_obtain()
 
-        basesPolicy = self.cmndArgsGet("0", cmndArgsSpecDict, effectiveArgsList)
-        rootPrefix = self.cmndArgsGet("1", cmndArgsSpecDict, effectiveArgsList)
+        basesPolicy = self.cmndArgsGet("0", cmndArgsSpecDict, argsList)
+        rootPrefix = self.cmndArgsGet("1", cmndArgsSpecDict, argsList)
 
         if basesPolicy == "bxoPolicy":
             if not bisosUserName:
@@ -1035,19 +1016,19 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
 
         elif basesPolicy == "foreignBxoPolicy":
             if not bisosUserName:
-                return icm.EH_problem_usageError("Missing bisosUserName")
+                return b_io.eh.problem_usageError("Missing bisosUserName")
 
             if not bisosGroupName:
-                return icm.EH_problem_usageError("Missing bisosGroupName")
+                return b_io.eh.problem_usageError("Missing bisosGroupName")
 
             if not bystarUserName:
-                return icm.EH_problem_usageError("Missing bystarUserName")
+                return b_io.eh.problem_usageError("Missing bystarUserName")
 
             if not bystarGroupName:
-                return icm.EH_problem_usageError("Missing bystarGroupName")
+                return b_io.eh.problem_usageError("Missing bystarGroupName")
 
             if not rootDir_foreignBxo:
-                return icm.EH_problem_usageError("Missing rootDir_foreignBxo")
+                return b_io.eh.problem_usageError("Missing rootDir_foreignBxo")
 
             if not rootDir_provisioners:
                 rootDir_provisioners = os.path.join(rootPrefix, bisosPolicy.rootDir_provisioners())
@@ -1064,35 +1045,35 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
             
         elif basesPolicy == "externalPolicy":
             if not bisosUserName:
-                return icm.EH_problem_usageError("Missing bisosUserName")                
+                return b_io.eh.problem_usageError("Missing bisosUserName")                
 
             if not bisosGroupName:
-                return icm.EH_problem_usageError("Missing bisosGroupName")
+                return b_io.eh.problem_usageError("Missing bisosGroupName")
 
             if not bystarUserName:
-                return icm.EH_problem_usageError("Missing bystarUserName")                
+                return b_io.eh.problem_usageError("Missing bystarUserName")                
 
             if not bystarGroupName:
-                return icm.EH_problem_usageError("Missing bystarGroupName")
+                return b_io.eh.problem_usageError("Missing bystarGroupName")
             
             if not rootDir_foreignBxo:
-                return icm.EH_problem_usageError("Missing rootDir_foreignBxo")
+                return b_io.eh.problem_usageError("Missing rootDir_foreignBxo")
 
             if not rootDir_provisioners:
-                return icm.EH_problem_usageError("Missing rootDir_provisioners")
+                return b_io.eh.problem_usageError("Missing rootDir_provisioners")
             
             if not rootDir_bisos:
-                return icm.EH_problem_usageError("Missing rootDir_bisos")
+                return b_io.eh.problem_usageError("Missing rootDir_bisos")
 
             if not rootDir_bxo:
-                return icm.EH_problem_usageError("Missing rootDir_bxo")                
+                return b_io.eh.problem_usageError("Missing rootDir_bxo")                
 
             if not rootDir_deRun:
-                return icm.EH_problem_usageError("Missing rootDir_deRun")                
+                return b_io.eh.problem_usageError("Missing rootDir_deRun")                
             
             
         else:
-            return icm.EH_critical_oops("basesPolicy={}".format(basesPolicy))
+            return b_io.eh.critical_oops("basesPolicy={}".format(basesPolicy))
 
         pkgInfoParsSet().cmnd(
             interactive=False,
@@ -1113,17 +1094,17 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
 ** TODO NOTYET auto detect marme.dev -- marme.control and decide where they should be, perhaps in /var/
 """
 
-####+BEGIN: bx:icm:python:method :methodName "cmndArgsSpec" :methodType "anyOrNone" :retType "bool" :deco "default" :argsList ""
-    """
-**  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Method-anyOrNone :: /cmndArgsSpec/ retType=bool argsList=nil deco=default  [[elisp:(org-cycle)][| ]]
-"""
-    @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
-    def cmndArgsSpec(self):
-####+END:       
+####+BEGIN: b:py3:cs:method/args :methodName "cmndArgsSpec" :methodType "anyOrNone" :retType "bool" :deco "default" :argsList "self"
+    """ #+begin_org
+**  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  Mtd-T-anyOrNone [[elisp:(outline-show-subtree+toggle)][||]] /cmndArgsSpec/ deco=default  deco=default  [[elisp:(org-cycle)][| ]]
+    #+end_org """
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
+    def cmndArgsSpec(self, ):
+####+END:
         """
 ***** Cmnd Args Specification
 """
-        cmndArgsSpecDict = icm.CmndArgsSpecDict()
+        cmndArgsSpecDict = cs.CmndArgsSpecDict()
         cmndArgsSpecDict.argsDictAdd(
             argPosition="0",
             argName="basesPolicy",
@@ -1143,12 +1124,20 @@ class pkgInfoParsDefaultsSet(icm.Cmnd):
     
     
 
-####+BEGIN: bx:icm:python:section :title "End Of Editable Text"
+####+BEGIN: blee:bxPanel:foldingSection :outLevel 0 :title " ~End Of Editable Text~ "
 """
 *  [[elisp:(beginning-of-buffer)][Top]] ################ [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(delete-other-windows)][(1)]]    *End Of Editable Text*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] 
 """
 ####+END:
 
-####+BEGIN: bx:dblock:global:file-insert-cond :cond "./blee.el" :file "/libre/ByStar/InitialTemplates/software/plusOrg/dblock/inserts/endOfFileControls.org"
+####+BEGIN: b:py3:cs:framework/endOfFile :basedOn "classification"
+""" #+begin_org
+* [[elisp:(org-cycle)][| *End-Of-Editable-Text* |]] :: emacs and org variables and control parameters
+#+end_org """
+
 #+STARTUP: showall
+
+### local variables:
+### no-byte-compile: t
+### end:
 ####+END:
