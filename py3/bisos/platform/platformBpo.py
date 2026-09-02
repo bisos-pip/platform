@@ -103,12 +103,17 @@ from pathlib import Path
 @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
 def platformBpoId(
 ####+END:
-) -> str:
+) -> str | None:
     """ #+begin_org
 ** [[elisp:(org-cycle)][| *DocStr | ]
     #+end_org """
 
-    fileParam = b.fp.FileParamReadFromPath(parRoot="/bisos/var/bpoId/sysChar.fp",)
+    try:
+        fileParam = b.fp.FileParamReadFromPath(parRoot="/bisos/var/bpoId/sysChar.fp",)
+    except IOError:
+        return None
+    if fileParam.parValueGet() is None:
+        return None
     return str(fileParam.parValueGet())
 
 

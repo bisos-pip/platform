@@ -135,15 +135,25 @@ def examples_csu(
 
     this_bpoId = platformBpo.platformBpoId()
 
+    if this_bpoId is None:
+        this_bpoId = "/bisos/git/bxRepos/bxObjects/bro_rawBisos/bro_rawBisosPlatform"
+        this_bpoIdSite = "/bisos/git/bxRepos/bxObjects/bro_rawBisos/bro_rawBisosSite"
+    else:
+        this_bpoIdSite = this_bpoId
+
     cs.examples.menuSection(f'=Platform /bisos/platform -- /bisos/var/platform/bpoId -- /bisos/var/platform/bpo=')
 
     cmnd('platformBase', pars=od([('bpoId', this_bpoId),]), args="update", comment=f"# Using platformBpo.platformBpoId()")
     cmnd('platformBase', args="obtain")
+    cmnd('platformBase', args="obtain", comment=f"| xargs ls -l  # Show the symlink")
+    cmnd('platformBase', args="obtain", comment=f"| xargs realpath  # Show the symlink")
 
     cs.examples.menuSection(f'=Platform /bisos/site -- /bisos/var/sites/selected=')
 
-    cmnd('siteBase', pars=od([('bpoId', this_bpoId),]), args="update")
+    cmnd('siteBase', pars=od([('bpoId', this_bpoIdSite),]), args="update")
     cmnd('siteBase', args="obtain")
+    cmnd('siteBase', args="obtain", comment=f"| xargs ls -l  # Show the symlink")
+    cmnd('siteBase', args="obtain", comment=f"| xargs realpath  # Show the symlink")
 
     cs.examples.menuSection(f'=Bases Report=')
 
