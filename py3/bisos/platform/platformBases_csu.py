@@ -132,25 +132,33 @@ def examples_csu(
     if sectionTitle == 'default':
         cs.examples.menuChapter('*Platform Bases -- Update, Obtain, List*')
 
+    bro_rawBisosPlatform = "/bisos/git/bxRepos/bxObjects/bro_rawBisos/bro_rawBisosPlatform"
+    bro_rawBisosSite = "/bisos/git/bxRepos/bxObjects/bro_rawBisos/bro_rawBisosSite"
 
     this_bpoId = platformBpo.platformBpoId()
 
     if this_bpoId is None:
-        this_bpoId = "/bisos/git/bxRepos/bxObjects/bro_rawBisos/bro_rawBisosPlatform"
-        this_bpoIdSite = "/bisos/git/bxRepos/bxObjects/bro_rawBisos/bro_rawBisosSite"
+        this_bpoId = bro_rawBisosPlatform
+        this_bpoIdSite = bro_rawBisosSite
     else:
         this_bpoIdSite = this_bpoId
 
     cs.examples.menuSection(f'=Platform /bisos/platform -- /bisos/var/platform/bpoId -- /bisos/var/platform/bpo=')
 
     cmnd('platformBase', pars=od([('bpoId', this_bpoId),]), args="update", comment=f"# Using platformBpo.platformBpoId()")
+    if this_bpoId != bro_rawBisosPlatform:
+        cmnd('platformBase', pars=od([('bpoId', bro_rawBisosPlatform),]), args="update", comment=f"# Set at rawBisos Construction")
+
     cmnd('platformBase', args="obtain")
     cmnd('platformBase', args="obtain", comment=f"| xargs ls -l  # Show the symlink")
     cmnd('platformBase', args="obtain", comment=f"| xargs realpath  # Show the symlink")
 
-    cs.examples.menuSection(f'=Platform /bisos/site -- /bisos/var/sites/selected=')
+    cs.examples.menuSection(f'=OBSOLETED BY: sitesManage.cs -- Platform /bisos/site -- /bisos/var/sites/selected=')
 
     cmnd('siteBase', pars=od([('bpoId', this_bpoIdSite),]), args="update")
+    if this_bpoId != bro_rawBisosPlatform:
+        cmnd('siteBase', pars=od([('bpoId', bro_rawBisosSite),]), args="update", comment=f"# Set at rawBisos Construction")
+
     cmnd('siteBase', args="obtain")
     cmnd('siteBase', args="obtain", comment=f"| xargs ls -l  # Show the symlink")
     cmnd('siteBase', args="obtain", comment=f"| xargs realpath  # Show the symlink")
